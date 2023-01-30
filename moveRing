@@ -1,0 +1,19 @@
+function hanoi(n, from, to, via) {
+    if (n === 0) {
+        return;
+    }
+    hanoi(n - 1, from, via, to);
+    to.push(from.pop());
+    console.log(`Move disk ${n} from ${from} to ${to}`);
+    hanoi(n - 1, via, to, from);
+}
+
+
+//В этой реализации функция hanoi принимает 4 параметра, первый — количество колец, второй, третий и четвертый — стержни.
+// можете использовать эту функцию следующим образом:
+
+let firstPole = [3, 2, 1];
+let secondPole = [];
+let thirdPole = [];
+
+hanoi(firstPole.length, firstPole, thirdPole, secondPole);
